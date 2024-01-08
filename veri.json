@@ -1,0 +1,22 @@
+{
+	"isim"		: "Zafer",
+	"soyisim"	: "Erkan",
+	"yas"		:36,
+	"meslek"	:"Bilgisayar Yazılımcısı",
+	"sehir"		:"İstanbul",
+	"bildigiDiller":[
+	{"dil"		: "Javascript",
+	"seviye"	: "uzman"},
+	{"dil"		: "PHP",
+	"seviye"	: "başlangıç"}, 
+	{"dil"		: "Css",
+	"seviye"	: "uzman"
+		}
+	]  ,
+	"bildigiDiller2":
+	{"Javascript":	"uzman",
+	"PHP": "başlangıç"}, 
+	"Css":"uzman"
+		}
+	]  
+}

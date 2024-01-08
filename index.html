@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Access-Control-Allow-Origin" content="*">
+	    
+	        <meta http-equiv="X-Content-Type-Options" content="nosniff">
+
+<link rel="manifest" href="/app.webmanifest" crossorigin="use-credentials" />
+	<title>"</title>
+</head>
+<body>
+
+<button onclick="ornek()">Bilgileri Getir</button>
+<br><br>
+<div id="sonuc"> Verileri elde etmek için butona basınız</div>
+
+
+<script type="text/javascript"  crossorigin="anonymous">
+	function ornek(){
+		var istek =new XMLHttpRequest();
+		istek.onreadystatechange=function(){
+
+
+if(this.readyState==4 && this.status==200){
+	/*var jsonDgerleri=JSON.parse(this.responseText);
+	var isimDegeri=jsonDgerleri.isim;
+
+	document.getElementById("sonuc").innerHTML=isimDegeri;*/
+
+
+fetch('veri.json') // JSON dosyanızın URL'sini buraya ekleyin
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          document.getElementById('sonuc').innerHTML = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+          console.error('Fetch error:', error);
+        });
+
+
+}else{
+	document.getElementById("sonuc").innerHTML=this.status;
+}
+
+
+
+		}
+		istek.open("GET","/veri.json");
+		//url
+		istek.send();
+	}
+
+
+
+</script>
+
+
+
+</body>
+</html>
